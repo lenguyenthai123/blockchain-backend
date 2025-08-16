@@ -1,0 +1,43 @@
+{
+  "name": "sancoin-blockchain-backend",
+  "version": "1.0.0",
+  "description": "SanCoin UTXO Blockchain Backend API",
+  "main": "src/server.js",
+  "scripts": {
+    "start:server": "NODE_ROLE=server node src/index.js",
+    "miner:once": "MINER_ONCE=true NODE_ROLE=miner node src/index.js",
+    "start:node1": "cross-env ENV_FILE=.env-node-1 node src/server.js",
+    "start:node2": "cross-env ENV_FILE=.env-node-2 node src/server.js",
+    "start:miner": "cross-env ENV_FILE=.env-miner node src/block-miner.js",
+    "start:miner-memory": "cross-env ENV_FILE=.env-miner node src/miner-memory.js",
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "jest",
+    "test-db": "node test-db.js",
+    "test-api": "node test-api.js",
+    "migrate": "node src/database/migrate.js",
+    "seed": "node src/database/seed.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.2",
+    "cors": "^2.8.5",
+    "crypto": "^1.0.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-rate-limit": "^7.1.5",
+    "helmet": "^7.1.0",
+    "joi": "^17.11.0",
+    "pg": "^8.11.3",
+    "pg-pool": "^3.6.1",
+    "secp256k1": "^5.0.0",
+    "sha256": "^0.2.0",
+    "uuid": "^9.0.1",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "@types/pg": "^8.10.9",
+    "cross-env": "^10.0.0",
+    "jest": "^29.7.0",
+    "nodemon": "^3.0.2"
+  }
+}

@@ -1,7 +1,7 @@
 /**
  * In-memory blockchain store (RAM fallback).
  * Used when the database is unavailable.
- */
+ */     
 
 const state = {
   blocks: [], // { index, hash, previousHash, merkleRoot, timestamp, nonce, difficulty, transactions: [{ hash, timestamp, type }] }
